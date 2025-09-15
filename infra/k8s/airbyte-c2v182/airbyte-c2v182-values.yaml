@@ -1,22 +1,25 @@
 global:
   edition: "enterprise"
-  airbyteUrl: https://airbyte-c2v182.abapp.cloud
+  airbyteUrl: "https://airbyte-c2v182.abapp.cloud"
   enterprise:
     secretName: "airbyte-config-secrets"
     licenseKeySecretKey: "LICENSE_KEY"
 
-  # Turn on auth + tell Airbyte where to read the admin creds
   auth:
     enabled: true
     instanceAdmin:
-      emailSecretName: airbyte-config-secrets
+      secretName: "airbyte-config-secrets"
       firstName: Ilja
       lastName: Herdt
-      emailSecretKey: instance-admin-email
-      passwordSecretName: airbyte-config-secrets
-      passwordSecretKey: instance-admin-password
+      emailSecretKey: "instance-admin-email"
+      passwordSecretKey: "instance-admin-password"
 
-# Enterprise license: read LICENSE_KEY from the same secret
-secrets:
-  createSecret: false
-  secretName: airbyte-config-secrets
+workload-launcher:
+  extraEnv:
+    - name: AIRBYTE_ENABLE_UNSAFE_CODE
+      value: "true"
+
+connector-builder-server:
+  extraEnv:
+    - name: AIRBYTE_ENABLE_UNSAFE_CODE
+      value: "true"
