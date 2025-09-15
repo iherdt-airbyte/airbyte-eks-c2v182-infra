@@ -2,30 +2,32 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: airbyte-ingress
-  namespace: airbyte-c2v182
+  namespace: airbyte-enterprise-c2v182
   annotations:
-    alb.ingress.kubernetes.io/ssl-redirect: "443"
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:432613289033:certificate/0c6f37cc-2e4b-4a64-8369-14f3c752f172
-    alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=30
     alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=30
+    alb.ingress.kubernetes.io/healthcheck-path: /api/v1/health
+    alb.ingress.kubernetes.io/success-codes: "200"
 spec:
   ingressClassName: alb
   rules:
-    - host: airbyte-c2v182.abapp.cloud
-      http:
-        paths:
-          - path: /api/v1/connector_builder/
-            pathType: Prefix
-            backend:
-              service:
-                name: airbyte-airbyte-connector-builder-server-svc
-                port:
-                  number: 80
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: airbyte-airbyte-server-svc
-                port:
-                  number: 8001
+  - host: airbyte-c2v182.abapp.cloud
+    http:
+      paths:
+      - path: /api/v1/connector_builder/
+        pathType: Prefix
+        backend:
+          service:
+            name: airbyte-enterprise-c2v182-airbyte-connector-builder-server-svc
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: airbyte-enterprise-c2v182-airbyte-server-svc
+            port:
+              number: 8001
