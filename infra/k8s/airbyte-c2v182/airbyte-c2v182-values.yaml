@@ -1,10 +1,16 @@
 global:
-  # Public URL for Airbyte
   airbyteUrl: https://airbyte-c2v182.abapp.cloud
 
-  # Namespace (matches ArgoCD app destination)
-  namespace: airbyte-c2v182
+  # Turn on auth + tell Airbyte where to read the admin creds
+  auth:
+    enabled: true
+    instanceAdmin:
+      emailSecretName: airbyte-config-secrets
+      emailSecretKey: instance-admin-email
+      passwordSecretName: airbyte-config-secrets
+      passwordSecretKey: instance-admin-password
 
-  # Image settings (example: pin to enterprise version)
-  image:
-    tag: 1.8.2
+# Enterprise license: read LICENSE_KEY from the same secret
+secrets:
+  createSecret: false
+  secretName: airbyte-config-secrets
