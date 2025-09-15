@@ -19,13 +19,13 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: airbyte-c2v182-airbyte-connector-builder-server-svc
+                name: airbyte-airbyte-connector-builder-server-svc
                 port:
                   number: 80
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: airbyte-c2v182-airbyte-server-svc
+                name: airbyte-airbyte-server-svc
                 port:
                   number: 8001
