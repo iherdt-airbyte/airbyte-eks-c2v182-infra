@@ -1,6 +1,9 @@
 global:
   edition: "enterprise"
   airbyteUrl: https://airbyte-c2v182.abapp.cloud
+  enterprise:
+    secretName: "airbyte-config-secrets"
+    licenseKeySecretKey: "LICENSE_KEY"
 
   # Turn on auth + tell Airbyte where to read the admin creds
   auth:
