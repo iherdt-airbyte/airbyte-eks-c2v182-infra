@@ -1,4 +1,5 @@
 global:
+  edition: "enterprise"
   airbyteUrl: https://airbyte-c2v182.abapp.cloud
 
   # Turn on auth + tell Airbyte where to read the admin creds
