@@ -1,0 +1,10 @@
+global:
+  # Public URL for Airbyte
+  airbyteUrl: https://airbyte-c2v182.abapp.cloud
+
+  # Namespace (matches ArgoCD app destination)
+  namespace: airbyte-c2v182
+
+  # Image settings (example: pin to enterprise version)
+  image:
+    tag: 1.8.2

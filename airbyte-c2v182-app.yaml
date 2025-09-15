@@ -5,25 +5,26 @@ metadata:
   namespace: argocd
 spec:
   project: default
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: airbyte-c2v182
+
   sources:
     - repoURL: https://airbytehq.github.io/helm-charts
       chart: airbyte
       targetRevision: 1.8.2
       helm:
         releaseName: airbyte
-        values: |
-          global:
-            airbyteUrl: https://airbyte-c2v182.abapp.cloud
+        valueFiles:
+          - $values/infra/k8s/airbyte-c2v182/airbyte-c2v182-values.yaml
 
     - repoURL: https://github.com/iherdt-airbyte/airbyte-eks-c2v182-infra.git
       targetRevision: main
-      path: infra/k8s/airbyte-c2v182
+      path: .
+      ref: values
       directory:
         recurse: true
-
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: airbyte-c2v182
 
   syncPolicy:
     automated:
