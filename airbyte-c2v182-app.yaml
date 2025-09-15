@@ -21,7 +21,7 @@ spec:
 
     - repoURL: https://github.com/iherdt-airbyte/airbyte-eks-c2v182-infra.git
       targetRevision: main
-      path: .
+      path: infra/k8s/airbyte-c2v182
       ref: values
       directory:
         recurse: true
