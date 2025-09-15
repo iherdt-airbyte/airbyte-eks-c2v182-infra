@@ -5,11 +5,10 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   sources:
-    - repoURL: https://github.com/airbytehq/airbyte-platform.git
-      targetRevision: v1.8.2
-      path: charts/v2/airbyte
+    - repoURL: https://airbytehq.github.io/helm-charts
+      chart: airbyte
+      targetRevision: 1.8.2
       helm:
         releaseName: airbyte
         values: |
