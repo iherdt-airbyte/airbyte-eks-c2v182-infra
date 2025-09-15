@@ -10,6 +10,8 @@ global:
     enabled: true
     instanceAdmin:
       emailSecretName: airbyte-config-secrets
+      firstName: Ilja
+      lastName: Herdt
       emailSecretKey: instance-admin-email
       passwordSecretName: airbyte-config-secrets
       passwordSecretKey: instance-admin-password
