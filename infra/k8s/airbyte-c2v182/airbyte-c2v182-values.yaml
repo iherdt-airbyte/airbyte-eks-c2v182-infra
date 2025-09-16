@@ -14,6 +14,7 @@ global:
 
   auth:
       enabled: true
+      existingSecret: airbyte-auth-secrets
       instanceAdmin:
         # -- The first name of the initial user
         firstName: "Ilja"
