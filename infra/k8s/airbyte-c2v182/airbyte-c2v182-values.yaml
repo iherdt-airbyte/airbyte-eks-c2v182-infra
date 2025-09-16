@@ -11,7 +11,7 @@ global:
   airbyteUrl: "https://airbyte-c2v182.abapp.cloud"
 
   auth:
-      enabled: false
+      enabled: true
       instanceAdmin:
         firstName: Ilja
         lastName: Herdt
