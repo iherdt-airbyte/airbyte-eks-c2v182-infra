@@ -1,5 +1,8 @@
 global:
-  edition: enterprise
+  # -- Edition; "community" or "enterprise"
+  edition: community
+
+  local: false
   
   enterprise:
     secretName: "airbyte-config-secrets"
@@ -8,6 +11,7 @@ global:
   airbyteUrl: "https://airbyte-c2v182.abapp.cloud"
 
   auth:
+      enabled: false
       instanceAdmin:
         firstName: Ilja
         lastName: Herdt
