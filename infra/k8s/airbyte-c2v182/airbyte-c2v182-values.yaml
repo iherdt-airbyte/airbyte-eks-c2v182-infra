@@ -15,7 +15,11 @@ global:
   auth:
       enabled: true
       instanceAdmin:
-        firstName: Ilja
-        lastName: Herdt
+        # -- The first name of the initial user
+        firstName: "Ilja"
+        # -- The last name of the initial user
+        lastName:  "Herdt"
+        # -- The key within `emailSecretName` where the initial user's email is stored
         emailSecretKey: "instance-admin-email"
+        # -- The key within `passwordSecretName` where the initial user's password is stored
         passwordSecretKey: "instance-admin-password"
