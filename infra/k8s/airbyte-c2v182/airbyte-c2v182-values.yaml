@@ -13,7 +13,7 @@ global:
   airbyteUrl: "https://airbyte-c2v182.abapp.cloud"
 
   auth:
-      enabled: true
+      enabled: false
       existingSecret: airbyte-auth-secrets
       instanceAdmin:
         # -- The first name of the initial user
