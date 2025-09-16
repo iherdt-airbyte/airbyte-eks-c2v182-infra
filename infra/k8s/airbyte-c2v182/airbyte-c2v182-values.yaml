@@ -1,16 +1,15 @@
 global:
-  edition: "enterprise"
-  airbyteUrl: "https://airbyte-c2v182.abapp.cloud"
-
+  edition: enterprise
+  
   enterprise:
     secretName: "airbyte-config-secrets"
     licenseKeySecretKey: "LICENSE_KEY"
 
-  auth:
-    enabled: false
+  airbyteUrl: "https://airbyte-c2v182.abapp.cloud"
+
+auth:
     instanceAdmin:
-    #   secretName: "airbyte-config-secrets"
-        firstName: Ilja
-        lastName: Herdt
-    #   emailSecretKey: "instance-admin-email"
-    #   passwordSecretKey: "instance-admin-password"
+      firstName: Ilja
+      lastName: Herdt
+      emailSecretKey: "instance-admin-email"
+      passwordSecretKey: "instance-admin-password"
