@@ -7,9 +7,9 @@ global:
 
   airbyteUrl: "https://airbyte-c2v182.abapp.cloud"
 
-auth:
-    instanceAdmin:
-      firstName: Ilja
-      lastName: Herdt
-      emailSecretKey: "instance-admin-email"
-      passwordSecretKey: "instance-admin-password"
+  auth:
+      instanceAdmin:
+        firstName: Ilja
+        lastName: Herdt
+        emailSecretKey: "instance-admin-email"
+        passwordSecretKey: "instance-admin-password"
