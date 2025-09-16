@@ -2,12 +2,12 @@ global:
   # -- Edition; "community" or "enterprise"
   edition: community
 
-  secretName: "airbyte-config-secrets"
+  secretName: "airbyte-auth-secrets"
 
   local: false
   
   enterprise:
-    secretName: "airbyte-config-secrets"
+    secretName: "airbyte-auth-secrets"
     licenseKeySecretKey: "LICENSE_KEY"
 
   airbyteUrl: "https://airbyte-c2v182.abapp.cloud"
