@@ -2,6 +2,8 @@ global:
   # -- Edition; "community" or "enterprise"
   edition: community
 
+  secretName: "airbyte-config-secrets"
+
   local: false
   
   enterprise:
