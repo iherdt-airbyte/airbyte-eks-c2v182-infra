@@ -14,13 +14,3 @@ global:
       lastName: Herdt
       emailSecretKey: "instance-admin-email"
       passwordSecretKey: "instance-admin-password"
-
-workload-launcher:
-  extraEnv:
-    - name: AIRBYTE_ENABLE_UNSAFE_CODE
-      value: "true"
-
-connector-builder-server:
-  extraEnv:
-    - name: AIRBYTE_ENABLE_UNSAFE_CODE
-      value: "true"
