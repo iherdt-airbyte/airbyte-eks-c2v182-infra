@@ -8,9 +8,9 @@ global:
 
   auth:
     enabled: false
-    # instanceAdmin:
+    instanceAdmin:
     #   secretName: "airbyte-config-secrets"
-    firstName: Ilja
-    lastName: Herdt
+        firstName: Ilja
+        lastName: Herdt
     #   emailSecretKey: "instance-admin-email"
     #   passwordSecretKey: "instance-admin-password"
